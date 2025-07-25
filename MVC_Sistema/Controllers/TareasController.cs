@@ -59,6 +59,7 @@ namespace MVC_Sistema.Controllers
         {
             try
             {
+                data.Estado = "Pendiente";
                 Crud<Tareas>.Create(data);
                 return RedirectToAction(nameof(Index));
             }

@@ -54,8 +54,10 @@ namespace MVC_Sistema.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Proyectos data)
         {
+            Console.WriteLine(data.Id);
             try
             {
+                data.Estado = "Pendiente";
                 Crud<Proyectos>.Create(data);
                 return RedirectToAction(nameof(Index));
             }
@@ -64,13 +66,14 @@ namespace MVC_Sistema.Controllers
                 ModelState.AddModelError("", ex.Message);
                 return View(data);
             }
+
         }
 
         // GET: ProyectosController/Edit/5
         public ActionResult Edit(int id)
         {
             var data = Crud<Proyectos>.GetById(id);
-            ViewBag.Tareas = GetTareas();
+            ViewBag.Usuarios = GetUsuarios();
             return View(data);
         }
 
