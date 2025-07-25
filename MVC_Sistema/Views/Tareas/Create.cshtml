@@ -12,11 +12,7 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" />
-                <span asp-validation-for="Id" class="text-danger"></span>
-            </div>
+
             <div class="form-group">
                 <label asp-for="Nombre" class="control-label"></label>
                 <input asp-for="Nombre" class="form-control" />
@@ -38,13 +34,22 @@
                 <span asp-validation-for="Fecha_fin" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="IdUsuario" class="control-label"></label>
-                <input asp-for="IdUsuario" class="form-control" />
+                <label asp-for="Estado" class="control-label"></label>
+                <input asp-for="Estado" class="form-control" />
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdUsuario" class="control-label">Elija a un usuario</label>
+                <select asp-for="IdUsuario" class="form-control" asp-items="ViewBag.Usuarios">
+                    <option values> Seleccione a un usuario </option>
+                </select>
                 <span asp-validation-for="IdUsuario" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="IdProyectos" class="control-label"></label>
-                <input asp-for="IdProyectos" class="form-control" />
+                <label asp-for="IdProyectos" class="control-label">Elija el proyecto al que pertenece la tarea</label>
+                <select asp-for="IdProyectos" class="form-control" asp-items="ViewBag.Proyecto">
+                    <option values> Seleccione un proyecto </option>
+                </select>
                 <span asp-validation-for="IdProyectos" class="text-danger"></span>
             </div>
             <div class="form-group">

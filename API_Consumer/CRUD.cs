@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Text;
 
-namespace Librerria.API.Consumer
+namespace Sistema.API.Consumer
 {
     public static class Crud<T>
     {

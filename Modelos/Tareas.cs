@@ -19,6 +19,8 @@ namespace Modelos
 
         public DateTime Fecha_fin { get; set; }
 
+        public string Estado { get; set; }
+
         public int IdUsuario {  get; set; }
         public int IdProyectos { get; set; }
         public Usuario? Usuario { get; set; }

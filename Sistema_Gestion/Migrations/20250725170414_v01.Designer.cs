@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Sistema_Gestion.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250725143308_v01")]
+    [Migration("20250725170414_v01")]
     partial class v01
     {
         /// <inheritdoc />
@@ -62,6 +62,10 @@ namespace Sistema_Gestion.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Estado")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

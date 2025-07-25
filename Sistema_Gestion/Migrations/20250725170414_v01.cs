@@ -57,6 +57,7 @@ namespace Sistema_Gestion.Migrations
                     Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Fecha_inicio = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Fecha_fin = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Estado = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IdUsuario = table.Column<int>(type: "int", nullable: false),
                     IdProyectos = table.Column<int>(type: "int", nullable: false),
                     UsuarioId = table.Column<int>(type: "int", nullable: true),

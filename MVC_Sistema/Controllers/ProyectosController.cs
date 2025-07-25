@@ -1,4 +1,4 @@
-﻿using Librerria.API.Consumer;
+﻿using Sistema.API.Consumer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -32,9 +32,20 @@ namespace MVC_Sistema.Controllers
             }).ToList();
         }
 
+        private List<SelectListItem> GetUsuarios()
+        {
+            var usuarios = Crud<Usuario>.GetAll();
+            return usuarios.Select(u=> new SelectListItem
+            {
+                Value = u.Id.ToString(),
+                Text = u.Nombre
+            }   ).ToList();
+        }
+
         // GET: ProyectosController/Create
         public ActionResult Create()
         {
+            ViewBag.Usuarios = GetUsuarios();
             return View();
         }
 

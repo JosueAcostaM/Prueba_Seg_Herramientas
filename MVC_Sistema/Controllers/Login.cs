@@ -1,32 +1,36 @@
-﻿using Sistema.API.Consumer;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Modelos;
+using Sistema.API.Consumer;
 
 namespace MVC_Sistema.Controllers
 {
-    public class UsuariosController : Controller
+    public class Login : Controller
     {
-        // GET: UsuariosController
+        // GET: Login
         public ActionResult Index()
         {
-            var data= Crud<Usuario>.GetAll();
-            return View(data);
+            return View();
         }
 
-        // GET: UsuariosController/Details/5
+        public ActionResult Registrar()
+        {
+            return View();
+        }
+
+        // GET: Login/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: UsuariosController/Create
+        // GET: Login/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: UsuariosController/Create
+        // POST: Login/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Usuario data)
@@ -42,14 +46,15 @@ namespace MVC_Sistema.Controllers
                 return View(data);
             }
         }
+        
 
-        // GET: UsuariosController/Edit/5
+        // GET: Login/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: UsuariosController/Edit/5
+        // POST: Login/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -64,13 +69,13 @@ namespace MVC_Sistema.Controllers
             }
         }
 
-        // GET: UsuariosController/Delete/5
+        // GET: Login/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: UsuariosController/Delete/5
+        // POST: Login/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)

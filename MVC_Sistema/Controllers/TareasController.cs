@@ -1,4 +1,4 @@
-﻿using Librerria.API.Consumer;
+﻿using Sistema.API.Consumer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -47,6 +47,8 @@ namespace MVC_Sistema.Controllers
         // GET: TareasController/Create
         public ActionResult Create()
         {
+            ViewBag.Usuarios= GetUsuarios();
+            ViewBag.Proyecto= GetProyectos();
             return View();
         }
 

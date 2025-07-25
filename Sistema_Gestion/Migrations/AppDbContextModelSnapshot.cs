@@ -62,6 +62,10 @@ namespace Sistema_Gestion.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Estado")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("Fecha_fin")
                         .HasColumnType("datetime2");
 
