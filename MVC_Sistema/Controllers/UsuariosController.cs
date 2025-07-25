@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Modelos;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MVC_Sistema.Controllers
 {
@@ -19,6 +20,42 @@ namespace MVC_Sistema.Controllers
         {
             var data= Crud<Usuario>.GetById(id);
             return View(data);
+        }
+
+        private List<SelectListItem> GetTareas()
+        {
+            var tareas = Crud<Tareas>.GetAll();
+            return tareas.Select(p => new SelectListItem
+            {
+                Value = p.Id.ToString(),
+                Text = p.Nombre
+            }).ToList();
+        }
+
+        public ActionResult EntregarTarea()
+        {
+            ViewBag.Tareas = GetTareas();
+            return View();
+        }
+
+
+        // POST: UsuariosController/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EntregarTarea(int id, Tareas data)
+        {
+            try
+            {
+                data = Crud<Tareas>.GetById(id);
+                data.Estado = "Completada";
+                Crud<Tareas>.Update(id, data);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+                return View(data);
+            }
         }
 
         // GET: UsuariosController/Create
