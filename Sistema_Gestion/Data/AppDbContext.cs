@@ -12,9 +12,10 @@ using Modelos;
         {
         }
 
-        public DbSet<Modelos.Usuario> Usuarios { get; set; } = default!;
-
-        public DbSet<Modelos.Tareas> Tareas { get; set; } = default!;
-
+        
         public DbSet<Modelos.Proyectos> Proyectos { get; set; } = default!;
+
+public DbSet<Modelos.Tareas> Tareas { get; set; } = default!;
+
+public DbSet<Modelos.Usuario> Usuario { get; set; } = default!;
     }

@@ -37,6 +37,7 @@ namespace MVC_Sistema.Controllers
         {
             try
             {
+                data.Rol = "Usuario";
                 Crud<Usuario>.Create(data);
                 return RedirectToAction(nameof(Index));
             }

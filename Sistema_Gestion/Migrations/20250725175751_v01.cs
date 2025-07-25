@@ -12,18 +12,19 @@ namespace Sistema_Gestion.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Usuarios",
+                name: "Usuario",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Contraseña = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Rol = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Usuarios", x => x.Id);
+                    table.PrimaryKey("PK_Usuario", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -34,6 +35,7 @@ namespace Sistema_Gestion.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Estado = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IdUsuario = table.Column<int>(type: "int", nullable: false),
                     UsuarioId = table.Column<int>(type: "int", nullable: true)
                 },
@@ -41,9 +43,9 @@ namespace Sistema_Gestion.Migrations
                 {
                     table.PrimaryKey("PK_Proyectos", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Proyectos_Usuarios_UsuarioId",
+                        name: "FK_Proyectos_Usuario_UsuarioId",
                         column: x => x.UsuarioId,
-                        principalTable: "Usuarios",
+                        principalTable: "Usuario",
                         principalColumn: "Id");
                 });
 
@@ -72,9 +74,9 @@ namespace Sistema_Gestion.Migrations
                         principalTable: "Proyectos",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Tareas_Usuarios_UsuarioId",
+                        name: "FK_Tareas_Usuario_UsuarioId",
                         column: x => x.UsuarioId,
-                        principalTable: "Usuarios",
+                        principalTable: "Usuario",
                         principalColumn: "Id");
                 });
 
@@ -104,7 +106,7 @@ namespace Sistema_Gestion.Migrations
                 name: "Proyectos");
 
             migrationBuilder.DropTable(
-                name: "Usuarios");
+                name: "Usuario");
         }
     }
 }

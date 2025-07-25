@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Sistema_Gestion.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250725170414_v01")]
+    [Migration("20250725175751_v01")]
     partial class v01
     {
         /// <inheritdoc />
@@ -33,6 +33,10 @@ namespace Sistema_Gestion.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Estado")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -120,9 +124,13 @@ namespace Sistema_Gestion.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Rol")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Usuarios");
+                    b.ToTable("Usuario");
                 });
 
             modelBuilder.Entity("Modelos.Proyectos", b =>

@@ -14,6 +14,8 @@ namespace Modelos
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
 
+        public string Estado { get; set; }
+
         public int IdUsuario { get; set; }
         public Usuario? Usuario { get; set; }
         public List<Tareas>? Tareas { get; set; }

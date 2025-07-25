@@ -12,6 +12,8 @@ namespace Modelos
 
         public string Email { get; set; }
 
-        public List<Tareas> Tareas { get; set; }= new List<Tareas>();
+        public string Rol {  get; set; }
+
+        public List<Tareas>? Tareas { get; set; }= new List<Tareas>();
     }
 }
