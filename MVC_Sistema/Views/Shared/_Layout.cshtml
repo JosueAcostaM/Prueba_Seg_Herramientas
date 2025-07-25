@@ -19,29 +19,60 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
+
+                        @*
+                            NAVEGAR A LA VISTA PRINCIPAL DEL CONTROLADOR HOME BUSCA LA VISTA INDEX
+                        *@
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+
+                        @*
+                            NAVEGAR A LA VISTA PRIVACIDAD DEL CONTROLADOR HOME BUSCA LA VISTA PRIVACY
+                        *@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
 
+                        @*
+                            NAVEGAR A LA VISTA DE REGISTRO DE USUARIOS DEL CONTROLADOR LOGIN BUSCA LA VISTA REGISTRAR
+                        *@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Registrar">Registrar Usuarios</a>
                         </li>
 
+                        @*
+                            NAVEGAR A LA VISTA LISTA DE USUARIOS DEL CONTROLADOR USUARIOS BUSCA LA VISTA INDEX
+                        *@
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Tareas" asp-action="Create">Crear Tares</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="Index">Ver Usuarios</a>
                         </li>
 
+                        @*
+                            NAVEGAR A LA VISTA PARA CREAR TAREAS DEL CONTROLADOR TAREAS BUSCA LA VISTA CREATE
+                        *@
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Tareas" asp-action="Index">Ver Tares</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Tareas" asp-action="Create">Crear Tareas</a>
                         </li>
 
+                        @*
+                            NAVEGAR A LA VISTA LISTA DE TAREAS DEL CONTROLADOR TAREAS BUSCA LA VISTA INDEX
+                        *@
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Tareas" asp-action="Index">Ver Tareas</a>
+                        </li>
+
+                        @*
+                            NAVEGAR A LA VISTA PARA CREAR PROYECTOS DEL CONTROLADOR PROYECTOS BUSCA LA VISTA CREAR
+                        *@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Proyectos" asp-action="Create">Crear Proyectos</a>
                         </li>
 
+                        @*
+                            NAVEGAR A LA VISTA LISTA DE PROYECTOS DEL CONTROLADOR PROYECTOS BUSCA LA VISTA INDEX
+                        *@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Proyectos" asp-action="Index">Ver Proyectos</a>
                         </li>

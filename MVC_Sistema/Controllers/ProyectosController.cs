@@ -98,7 +98,7 @@ namespace MVC_Sistema.Controllers
         // GET: ProyectosController/Delete/5
         public ActionResult Delete(int id)
         {
-            var data = Crud<Tareas>.GetById(id);
+            var data = Crud<Proyectos>.GetById(id);
             return View(data);
         }
 

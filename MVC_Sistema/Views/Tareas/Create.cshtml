@@ -13,6 +13,10 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
+            @*
+                ELIMINE EL CAMPO ID PARA AUTOMATIZACION DEL PROCESO DE CREAR UNA NUEVA TAREA
+            *@
+
             <div class="form-group">
                 <label asp-for="Nombre" class="control-label"></label>
                 <input asp-for="Nombre" class="form-control" />

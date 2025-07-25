@@ -43,7 +43,6 @@ namespace MVC_Sistema.Controllers
             }).ToList();
         }
 
-
         // GET: TareasController/Create
         public ActionResult Create()
         {
